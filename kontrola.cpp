@@ -1,6 +1,3 @@
-#include <iostream>
-#include <fstream>
-using namespace std;
 
         bool je_cislo(char znak){
             return (int(znak) - 48 >= 0) && (int(znak) - 48 <= 9);

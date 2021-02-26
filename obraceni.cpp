@@ -1,9 +1,3 @@
-#include <iostream>
-#include <fstream>
-#include <sstream>
-using namespace std;
-
-int rozmery = 100;
 
 void obraceni_zadani(string zadani_bok, string zadani_vrch, string vystupni_bok, string vystupni_vrch){
 
