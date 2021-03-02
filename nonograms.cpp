@@ -8,6 +8,7 @@ using namespace std;
 #include "obraceni.cpp"
 #include "nacti_zadani.cpp"
 #include "generace_moznosti.cpp"
+#include "dalsi_radek.cpp"
 
 int main(void){
 
@@ -18,5 +19,11 @@ int main(void){
     nacitani_zadani_krizovky("bok.txt", "vrch.txt");
     nageneruj_vsechny_moznosti_radku("moznosti", "_moznost.txt");
     prepis_radka_na_0_1("moznosti", "_moznost.txt", "prepis", "_prepis.txt");
+    cout << pocet_radku_krizovky;
+
+    for (int radek = 2; radek <= pocet_radku_krizovky; radek++){
+        pridej_k_aktualnemu_reseni_dalsi_radek(radek, "radky", "_radek.txt", "prepis", "_prepis.txt");
+    }
+
     return 0;
 }

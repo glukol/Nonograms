@@ -1,6 +1,6 @@
 
-const int vybarvene = 1;
-const int nevybarvene = 0;
+//const int vybarvene = 1;
+//const int nevybarvene = 0;
 
     void Rozdel_mezery(int zbyvajicich_useku, int zbyvajicich_mezer, int useku, string Prefix, ofstream &Soubor){
 
