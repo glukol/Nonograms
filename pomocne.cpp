@@ -37,7 +37,7 @@
     void prilep_novy_radek_do_krizovky(string radek, int poradi_noveho_radka){
 
         for (int pocitadlo_i = 1; pocitadlo_i <= pocet_sloupcu_krizovky; pocitadlo_i++){
-            Krizovka.pixels[pocet_radku_krizovky - poradi_noveho_radka + 1 + rozmery][pocitadlo_i] = radek[pocitadlo_i];
+            Krizovka.pixels[pocet_radku_krizovky - poradi_noveho_radka + 1 + rozmery][pocitadlo_i] = radek[pocitadlo_i - 1];
         }
 
     }
@@ -63,7 +63,7 @@
 
         for (int sloupec = 1; sloupec <= pocet_sloupcu_krizovky; sloupec++){
 
-            if ((zaloha[sloupec] == vybarvene) && (radek[sloupec] != vybarvene)){
+            if ((zaloha[sloupec - 1] == vybarvene) && (radek[sloupec - 1] != vybarvene)){
                 return false; // radek nepasuje
                 // protože doplnění je jiné než řádek - v obarvených políčkách
                 // první možnost je, že máme rozmalovanou nějakou k-tici a tu jsme prodloužili
@@ -72,7 +72,7 @@
                 // do křížovky, také dostaneme doplněním.
             }
 
-            if ((zaloha[sloupec] != vybarvene) && (radek[sloupec] == vybarvene) &&
+            if ((zaloha[sloupec - 1] != vybarvene) && (radek[sloupec - 1] == vybarvene) &&
                 (Krizovka.pixels[pocet_radku_krizovky - poradi_noveho_radka + 2 + rozmery][sloupec] == vybarvene)){
                 return false; // opět řádek nepasuje
                 // načetli jsme hotovou k-tici, pak jsme provedli doplnění, tak jak by to dělal člověk,
@@ -82,7 +82,7 @@
                 // protože vybarvená k-tice skončila.
             }
 
-            if  ((radek[sloupec] == vybarvene) && (zaloha[sloupec] == konec)){
+            if  ((radek[sloupec - 1] == vybarvene) && (zaloha[sloupec - 1] == konec)){
                 return false; // řádek opět nepasuje
                 // Stane se, že doplnění už vyplnilo všechny obarnevé k-tice do křížovky a už zbývají jen
                 // nezery, takovéto mezery nejsou značeny jako "nevybarvene", ale jako "konec". Proto, když
@@ -99,7 +99,7 @@
 
         for (int sloupec = 1; sloupec <= pocet_sloupcu_krizovky; sloupec++){
             if ((Krizovka.pixels[pocet_radku_krizovky - poradi_noveho_radka + 1 + rozmery][sloupec] != vybarvene) &&
-                (radek[sloupec] == vybarvene)){
+                (radek[sloupec - 1] == vybarvene)){
                 return false;
                 // radek z možností jsme nalepili do křížovky a spustili jsme znova metodu doplnění, kontrolujeme
                 // jestli se v tom řádku nic nezměnilo. Ale co se mohlo změnit? Bílá na černou se změnit nemůže,
