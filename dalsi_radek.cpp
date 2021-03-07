@@ -6,7 +6,7 @@ using namespace std;
 #include "pomocne.cpp"
 #include "iterace.cpp"
 //#include "deklarace.cpp"
-//#include "rezani.cpp"
+#include "rezani.cpp"
 
 // iterace na sloupce a posun momentálně šahají mimo pole, proto to nefunguje
 
@@ -88,7 +88,7 @@ using namespace std;
         //}
         // wata fuck ???
 
-     //kontrola_rezani_zadani(poradi_noveho_radka, slozka_pracovna + to_string(poradi_noveho_radka) + pripona_pracovna);
+        kontrola_rezani_zadani(poradi_noveho_radka, slozka_pracovna + to_string(poradi_noveho_radka) + pripona_pracovna);
 
     }
 

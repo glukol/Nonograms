@@ -19,24 +19,42 @@
 
         //int pocitadlo_i;
         string radek;
-        bool vystup = true;
+        int cislo_radka = 0;
+        //bool vystup = true;
 
         ifstream soubor;
         soubor.open(jmeno);
 
         while(getline(soubor, radek)){
-            for (int pocitadlo_i = 2; pocitadlo_i <= radek.length() - 1; pocitadlo_i++){
-                if (!spravny_znak(radek[pocitadlo_i])){return false;}
-                if (je_mezera(radek[pocitadlo_i]) && (je_mezera(radek[pocitadlo_i - 1]) || je_mezera(radek[pocitadlo_i + 1]))){return false;}
-                if ((!je_cislo(radek[1])) || (!je_cislo(radek[radek.length()]))){return false;}
-                if (dlouhe_cislo(radek, pocitadlo_i)){return false;}
-                if (!vystup){break;}
+            cislo_radka++;
+            //cout << radek.length() << '\n';
+            for (int pocitadlo_i = 2; pocitadlo_i <= radek.length() - 2; pocitadlo_i++){
+                if (!spravny_znak(radek[pocitadlo_i])){
+                    cout << "A " << jmeno << ", radek " << to_string(cislo_radka) << ", znak = \"" << radek[pocitadlo_i] << "\"" << '\n';
+                    return true;
+                }
+                else if (je_mezera(radek[pocitadlo_i]) && (je_mezera(radek[pocitadlo_i - 1]) || je_mezera(radek[pocitadlo_i + 1]))){
+                    cout << "B " << jmeno << ", radek " << to_string(cislo_radka) << ", znak = \"" << radek[pocitadlo_i] << "\"" << '\n';
+                    return true;
+                }
+                else if ((!je_cislo(radek[0])) || (!je_cislo(radek[radek.length() - 2]))){
+                    cout << "C " << jmeno << ", radek " << to_string(cislo_radka) << ", znak = \"" << radek[radek.length() - 2] << "\"" << '\n';
+                    //cout << radek << '\n';
+                    //cout << radek.length() << '\n';
+                    return true;
+                }
+                else if (dlouhe_cislo(radek, pocitadlo_i)){
+                    cout << "D " << jmeno << ", radek " << to_string(cislo_radka) << ", znak = \"" << radek[pocitadlo_i] << "\"" << '\n';
+                    return true;
+                }
+                //else if (!vystup){break;}
             }
-            if (!vystup){break;}
+            //if (!vystup){break;}
+            radek = "";
         }
 
         soubor.close();
-        return vystup;
+        return false;
     }
 
 bool kontrola_zadani(string z_bok, string z_vrch){

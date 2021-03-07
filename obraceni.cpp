@@ -13,21 +13,21 @@ void obraceni_zadani(string zadani_bok, string zadani_vrch, string vystupni_bok,
 
     string radek_bok;
     while (getline(Soubor_bok, radek_bok)){
-      pocitadlo_i = 1;
+		pocitadlo_i = 1;
 
-      istringstream is(radek_bok);
-      int temporary;
-      while( is >> temporary ) {
-        Otaceni_bok[pocitadlo_i] = temporary;
-        pocitadlo_i++;
-      }
+		istringstream is(radek_bok);
+		int temporary;
+		while( is >> temporary ) {
+			Otaceni_bok[pocitadlo_i] = temporary;
+			pocitadlo_i++;
+		}
 
-      for (int pocitadlo_k = pocitadlo_i - 1; pocitadlo_k >= 2; pocitadlo_k--){
-        Vystup << Otaceni_bok[pocitadlo_k];
-        Vystup <<  ' ';
-      }
+		for (int pocitadlo_k = pocitadlo_i - 1; pocitadlo_k >= 2; pocitadlo_k--){
+			Vystup << Otaceni_bok[pocitadlo_k];
+			Vystup <<  ' ';
+		}
 
-      Vystup << Otaceni_bok[1] << "\n";
+		Vystup << Otaceni_bok[1] << "\n";
     }
 
     Soubor_bok.close();
@@ -38,11 +38,14 @@ void obraceni_zadani(string zadani_bok, string zadani_vrch, string vystupni_bok,
     Soubor_vrch.open(zadani_vrch);
     Vystup.open(vystupni_bok);
 
+	pocitadlo_i = 0;
     while (getline(Soubor_vrch, Otaceni_vrch[pocitadlo_i])){
-      pocitadlo_i++;}
+      	pocitadlo_i++;
+	}
 
-    for (int pocitadlo_k = pocitadlo_i - 1; pocitadlo_k >= 1; pocitadlo_k--){
-      Vystup << Otaceni_vrch[pocitadlo_k] << "\n";}
+    for (int pocitadlo_k = pocitadlo_i-1; pocitadlo_k >= 0; pocitadlo_k--){
+      	Vystup << Otaceni_vrch[pocitadlo_k] << "\n";
+	}
 
     Soubor_vrch.close();
     Vystup.close();

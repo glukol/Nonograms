@@ -112,7 +112,6 @@
                 // Asi bychom nepotřebovali, pokud by sme tam měli správně napsané ty konce.
                 }
         }
-
         return true;
     }
 
