@@ -18,7 +18,7 @@ int main(void){
     string jmeno_vstupu_bok = "bok.txt";
     string jmeno_vstupu_vrch = "vrch.txt";
     zpracuj_zadani(jmeno_vstupu_bok, jmeno_vstupu_vrch, "", a, b, c, p_z_b,
-        p_z_v, s_m_l, p_m_r, s_p_l, p_p_r, s_h_l, p_h, v_p);
+        p_z_v, s_m_l, p_m_r, s_p_l, p_p_r, s_h_l, p_h, v_p, soub);
 
     //cout << "Hello! This is a C++ program." << "\n";
     //cout << kontrola_zadani("bok.txt", "vrch.txt") << "\n";

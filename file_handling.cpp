@@ -44,6 +44,25 @@ void prepis_vysledku(string jmeno, string slozka, string pripona){
 	prepis_reseni.close();
 }
 
+/* procedure uklid_po_sobe(slozka_moznosti, pripona_moznosti, slozka_prepis,
+    pripona_prepis, slozka_hotove, pripona_hotove, a, b, c, prip_bok, prip_vrch: string);
+  begin
+    vymaz_stare_soubory(slozka_moznosti, pripona_moznosti);
+    createdir(slozka_moznosti);
+    vymaz_stare_soubory(slozka_prepis, pripona_prepis);
+    createdir(slozka_prepis);
+    vymaz_stare_soubory(slozka_hotove, pripona_hotove);
+    createdir(slozka_hotove);
+
+    DeleteFile(a + prip_bok);
+    DeleteFile(a + prip_vrch);
+    DeleteFile(b + prip_bok);
+    DeleteFile(b + prip_vrch);
+    DeleteFile(c + prip_bok);
+    DeleteFile(c + prip_vrch);
+  end;
+*/
+
 /*	procedure obrazek(meno: string);
 	var
 		x, y: integer;

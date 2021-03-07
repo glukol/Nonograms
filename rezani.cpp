@@ -82,7 +82,7 @@ void rozrezani_zadani(string jmeno_noveho_zadani_bok_a, string jmeno_noveho_zada
 	spracovani_vrch(maximum + 1, pocet_radku_krizovky, jmeno_noveho_zadani_vrch_a);
 }
 
-void kontrola_rezani_zadani(int poradi_noveho_radka, string meno_souboru_s_moznostmi){
+void kontrola_rezani_zadani(int poradi_noveho_radka, string meno_souboru_s_moznostmi, string slozka){
 
 	char ch;
 	int pocitadlo_moznosti;
@@ -125,8 +125,7 @@ void kontrola_rezani_zadani(int poradi_noveho_radka, string meno_souboru_s_mozno
 	// pripadny balast ktery se muze nachazet v krizovce programu
 
 	if (pocitadlo_moznosti == 1){
-		rozrezani_zadani("Novy_bok_a.txt", "Novy_vrch_a.txt", "Novy_bok_b.txt", "Novy_vrch_b.txt",
-			poradi_noveho_radka);
-
+		rozrezani_zadani(slozka + "Novy_bok_a.txt", slozka + "Novy_vrch_a.txt", slozka + "Novy_bok_b.txt",
+			slozka + "Novy_vrch_b.txt", poradi_noveho_radka);
 	}
 }

@@ -23,6 +23,7 @@ mrizka_zadani Krizovka;
     string p_m_r = "_radek.txt";              // pripona_moznosti_radky
     string s_p_r = "Prepis_radku";            // slozka_prepis_radky
     string p_p_r = "_prepis.txt";             // pripona_prepis_radky
+    string soub  = "Soubory/";
 
     string s_m_s = "Moznosti_sloupce";          // slozka_moznosti_sloupce
     string p_m_s = "_sloupec.txt";              // pripona_moznosti_sloupce

@@ -10,7 +10,7 @@ using namespace std;
 
 // iterace na sloupce a posun momentálně šahají mimo pole, proto to nefunguje
 
-    void pridej_k_aktualnemu_reseni_dalsi_radek(int poradi_noveho_radka, string slozka_pracovna, string pripona_pracovna, string slozka_moznosti_radka, string pripona_moznosti){
+    void pridej_k_aktualnemu_reseni_dalsi_radek(int poradi_noveho_radka, string slozka_pracovna, string pripona_pracovna, string slozka_moznosti_radka, string pripona_moznosti, string slozka){
         //typ_zalohy = array[1..rozmery] of barveni;
 
         ifstream Soubor_s_hotovymi_k_ticemi;
@@ -88,7 +88,7 @@ using namespace std;
         //}
         // wata fuck ???
 
-        kontrola_rezani_zadani(poradi_noveho_radka, slozka_pracovna + to_string(poradi_noveho_radka) + pripona_pracovna);
+        kontrola_rezani_zadani(poradi_noveho_radka, slozka_pracovna + to_string(poradi_noveho_radka) + pripona_pracovna, slozka);
 
     }
 
