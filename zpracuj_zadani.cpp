@@ -1,8 +1,5 @@
 
-#include "kontrola.cpp"
 #include "obraceni.cpp"
-#include "nacti_zadani.cpp"
-#include "generace_moznosti.cpp"
 #include "file_handling.cpp"
 #include "dalsi_radek.cpp"
 
@@ -24,7 +21,8 @@ bool zpracuj_zadani(string meno_vstupu_bok, string meno_vstupu_vrch,
     obraceni_zadani(soubory + a + prip_bok, soubory + a + prip_vrch, soubory + b + prip_bok, soubory + b + prip_vrch);
     obraceni_zadani(soubory + b + prip_bok, soubory + b + prip_vrch, soubory + c + prip_bok, soubory + c + prip_vrch);
 
-    nacitani_zadani_krizovky(soubory + meno_vstupu_bok, soubory + meno_vstupu_vrch);
+    //nacitani_zadani_krizovky(soubory + meno_vstupu_bok, soubory + meno_vstupu_vrch);
+    nacitani_zadani_krizovky(soubory + b + prip_bok, soubory + b + prip_vrch);
 
     nageneruj_vsechny_moznosti_radku(slozka_moznosti, pripona_moznosti);
     prepis_radka_na_0_1(slozka_moznosti, pripona_moznosti, slozka_prepis, pripona_prepis);

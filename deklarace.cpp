@@ -2,6 +2,8 @@
 const int rozmery = 500;
 const char vybarvene = '1';
 const char nevybarvene = '0';
+const char nevime = '2';
+const char nelze_vydedukovat = '3';
 const char konec = 'K';
 const int zavirani_souboru = 1000;
 
