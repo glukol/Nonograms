@@ -22,7 +22,7 @@ void dedukce_radky(string pripona_moznosti, string Slozka){
     string moznost;
     ofstream nove_moznosti;
     bool vyhovuje;
-    int k;
+    //int k;
 
     // Předpokládáme, že máme vyřazené řádky z předešlého kroku, které nevyhovují tomu co jsme už vyřešili.
 
@@ -143,7 +143,7 @@ void vynulovani_krizovky(mrizka_zadani &co_mam_vynulovat, char cim){
 }*/
 
 void reflexe_reseni(){
-	int pomocna;
+	char pomocna;
 
 	if (pocet_radku_krizovky < pocet_sloupcu_krizovky){
      	for (int radek = 1; radek <= pocet_radku_krizovky; radek++){
@@ -157,9 +157,9 @@ void reflexe_reseni(){
     else{
     	for (int sloupec = 1; sloupec <= pocet_sloupcu_krizovky; sloupec++){
             for (int radek = sloupec; radek <= pocet_radku_krizovky; radek++){
-                pomocna = Krizovka.pixels[sloupec][radek];
-                Krizovka.pixels[sloupec][radek] = Krizovka.pixels[radek][sloupec];
-                Krizovka.pixels[radek][sloupec] = pomocna;
+                pomocna = Krizovka.pixels[radek][sloupec];
+                Krizovka.pixels[radek][sloupec] = Krizovka.pixels[sloupec][radek];
+                Krizovka.pixels[sloupec][radek] = pomocna;
 			}
 		}
 	}
@@ -198,11 +198,11 @@ bool reseni_pomoci_dedukce(string meno_vstupu_bok, string meno_vstupu_vrch, stri
 
         vypsani_dedukce(slozka, to_string(2 * iterace - 1));
         //obrazek_dedukce(2 * iterace - 1, to_string(2 * iterace - 1) + "_obr.bmp");
-        reflexe_reseni;
+        reflexe_reseni();
 
         //nacitani_zadani_krizovky(meno_vstupu_vrch, meno_vstupu_bok);
         dedukce_radky(pripona_prepis_sloupce, slozka_prepis_sloupce);
-        reflexe_reseni;
+        reflexe_reseni();
 
         vypsani_dedukce(slozka, to_string(2 * iterace));
         //obrazek_dedukce(2*i,inttostr(2*i)+'_obr.bmp');
