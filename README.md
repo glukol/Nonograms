@@ -32,7 +32,19 @@ Načítací část
 
 Teorie k počtu křížovek a zadání
 ---------------------------------------
-Pro křížovku s pevně zvolenými rozměry n krát m je zajímavé uvažovat faktorprostor všech řešení (tj. černo-bílých obrázků) podle ekvivalence E(obr1,obr2) = "Obrázky, obr1 a obr2 jsou řešením stejného zadání". Je jasné, že obrázků je 2^(n* m) (když nepožadujeme neprázdnost žádků a sloupců, kdybychom to požadovali, dá se počet spočítat pomocí principu inkluze a exkluze). Netriviální ovšem je, kolik existuje různých zadání, které mají řešení. Tahle otázka dává smysl právě díky tomu, že některé křížovky mají více řešení. Některé křížovky mají dokonce hodně řešení. Když například uvažujeme čtvercovou křížovku, která má v zadání v každém sloupci a řádku právě jednu jedničku, je vidět, že taková křížovka má n! řešení. Ještě hůře jsou na tom křížovky, které mají v každém řádku a sloupci právě k jedniček (maximalizujeme přes k). Tohle jsou i nejhorší případy na počet možností na řádek. Kombinatorickými úvahami (tenisáková metoda) se spočte, že v takovém případě existuje Binomial[k + n - 1, k] možností obarvení řádku (řádek dlouhý n).
+Pro křížovku s pevně zvolenými rozměry n krát m je zajímavé uvažovat faktorprostor všech řešení (tj. černo-bílých obrázků) podle ekvivalence E(obr1,obr2) = "Obrázky, obr1 a obr2 jsou řešením stejného zadání". Je jasné, že obrázků je 2^(n* m) (když nepožadujeme neprázdnost žádků a sloupců, kdybychom to požadovali, dá se počet spočítat pomocí principu inkluze a exkluze). Netriviální ovšem je, kolik existuje různých zadání, které mají řešení. Tahle otázka dává smysl právě díky tomu, že některé křížovky mají více řešení. Některé křížovky mají dokonce hodně řešení. Když například uvažujeme čtvercovou křížovku, která má v zadání v každém sloupci a řádku právě jednu jedničku, je vidět, že taková křížovka má n! řešení. Ještě hůře jsou na tom křížovky, které mají v každém řádku a sloupci právě k jedniček (maximalizujeme přes k). Tohle jsou ty nejhorší případy na počet možností na řádek. Kombinatorickými úvahami (tenisáková metoda) se spočte, že v takovém případě existuje Binomial[k + n - 1, k] možností obarvení řádku (řádek dlouhý n).
+
+Když chceme zezdola odhadnout počet zadání, které mají řešení, triviální úvahou je vzít počet polovin zadání (zrčíme zadají jen pro řádky). Protože když něco předepíšeme jen v jednom směru, rozhodně bude existovat obarvení, které to bude splňovat. Tudíž dolním odhadem je například (počet zadání řádku)^n, kde počet zadání řádku se dá spočíst takto: fixujeme počet obarvených políček na řádku a fixujeme počet souvislých částí, mezi které je rozdělíme, pak aplikujeme tenisákovou metodu. Tohle přesčítáme přes počet obarvených políček a počet souvislých obarvených oblastí.
+
+Vzorec pro dolní odhad počtu zadání (na řádek)
+P[n_] := Sum[Sum[Binomial[k + i - 1, k], {k, 0, n - 2* i + 1}], {i, 1, Ceiling[n/2]}]
+a hodnoty pro n od 1 do 50
+{1, 2, 4, 7, 12, 20, 33, 54, 88, 143, 232, 376, 609, 986, 1596, 2583, 4180, 6764, 10945, 17710, 28656, 46367, 75024, 121392, 196417,  317810, 514228, 832039, 1346268, 2178308, 3524577, 5702886, 9227464, 14930351, 24157816, 39088168, 63245985, 102334154, 165580140,  267914295, 433494436, 701408732, 1134903169, 1836311902, 2971215072, 4807526975, 7778742048, 12586269024, 20365011073, 32951280098}
+
+Když tyto čísla umocníme na příslošný počet řádků, dostaneme odhad na počet zadání. Pro přehlednost jsou hodnoty zlogaritmovány desítkovým logaritmem.
+{0., 0.60206, 1.80618, 3.38039, 5.39591, 7.80618, 10.6296, 13.8592, 17.5003, 21.5534, 26.0204, 30.9023, 36.2, 41.9143, 48.0455, 54.594, 61.56, 68.9437, 76.7451, 84.9644, 93.6015, 102.657, 112.13, 122.021, 132.329, 143.056, 154.201, 165.764, 177.745, 190.144, 202.96, 216.195, 229.848, 243.918, 258.407, 273.314, 288.638, 304.381, 320.541, 337.12, 354.116, 371.531, 389.363, 407.614, 426.282, 445.368, 464.873, 484.795, 505.135, 525.894}
+
+Vidíme tedy, že faktorizaci prostoru rozhodně nejsme schopni provést pro křížovky vetší než 7*7.
 
 Vytvoření obrázků
 ---------------------------------------
