@@ -110,6 +110,7 @@
                 // skutečně pasuje.
 
                 // Asi bychom nepotřebovali, pokud by sme tam měli správně napsané ty konce.
+                // Asi jsme už fakt všechny případy pokryli.
                 }
         }
         return true;

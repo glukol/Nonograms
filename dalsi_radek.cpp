@@ -57,13 +57,14 @@ using namespace std;
 
                 if (novy_radek_pasuje_ke_k_tici(radek, Zaloha_stinu_noveho_radku, poradi_noveho_radka)){
 
-                    prilep_novy_radek_do_krizovky(radek, poradi_noveho_radka);
-                    iterace_na_sloupce();
+                    //prilep_novy_radek_do_krizovky(radek, poradi_noveho_radka);
+                    //iterace_na_sloupce();
 
 
-                    if (novy_radek_pasuje_k_doplneni(radek, poradi_noveho_radka)){
+                    //if (novy_radek_pasuje_k_doplneni(radek, poradi_noveho_radka)){
                         vypis_k_plus_jedna_tice_do_noveho_souboru(Soubor_s_hotovymi_k_plus_jedna_ticemi, radek, poradi_noveho_radka);
-                    }
+                    //}
+                    // Zdá se, že tuto kontrolu už skutečně nepotřebujeme
                 }
 
                 radek = "";
