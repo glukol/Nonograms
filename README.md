@@ -29,6 +29,9 @@ Načítací část
 * Když projdeme jeden rozměr, křížovku obrátíme a začneme provádět to samé z druhé strany. Tím, že něco vydedukuje v jednom směru, nám zruší některé možnosti v druhém a když pak budeme v tom druhém směru něco dedukovat, tak tím zahozením některých možností se v optimálním přídapě zase dostaneme do situace, kdy mají všechny zbylé možnosti něco společné.
 * Je zřejmé, že tato metoda nemůže fungovat na všechny křížovky. Triviálním protipříkladem, které táto meotda nevyřeší jsou křížovky s více řešeními. Existují ovšem i křížovky s jednoznačným řešením, které tato metoda nevyřeší. V takových případech se musí při řešení koukat současně na sloupce i řádky, případně něco zkusit doplnit a danou možnost vyspořit. Takže bude zbývat projít pouze ostatní možnosti, což zase může umožnit něco dedukovat atd.
 
+Řešení takovýmito metodami je ovšej jedno z nejlepších možných. Řešení křížovky je totiž ekvivalentní hledání splňujícího ohodnocení pro nějakou speciální výrokovou formuly, která odpovídá konjunkci splnění řádků a sloupců, kde řadek/sloupec je splněn právě tehdy, když ohodnocení křížovky odpovídá nějak možnosti řádku. Řešení se pak provádí vhodnou aplikací de-Morganových pravidel. Celková délka výrokové formule se tedy v každém kroku zkracuje, což je veledůležitá vlastnost. Hloupý brute-force tady nefunguje právě proto, že když se snažíme zkombinovat všechny možnosti na řádky, tak pomocí de-Morganových pravidel roznásobujeme konjunkce, což způsobuje prodlužování výroku.
+
+Nejlepším způsobem řešení bude nějaká kombinace brute-force a deduktivní metody.
 
 Teorie k počtu křížovek a zadání
 ---------------------------------------
