@@ -29,6 +29,11 @@ Načítací část
 * Když projdeme jeden rozměr, křížovku obrátíme a začneme provádět to samé z druhé strany. Tím, že něco vydedukuje v jednom směru, nám zruší některé možnosti v druhém a když pak budeme v tom druhém směru něco dedukovat, tak tím zahozením některých možností se v optimálním přídapě zase dostaneme do situace, kdy mají všechny zbylé možnosti něco společné.
 * Je zřejmé, že tato metoda nemůže fungovat na všechny křížovky. Triviálním protipříkladem, které táto meotda nevyřeší jsou křížovky s více řešeními. Existují ovšem i křížovky s jednoznačným řešením, které tato metoda nevyřeší. V takových případech se musí při řešení koukat současně na sloupce i řádky, případně něco zkusit doplnit a danou možnost vyspořit. Takže bude zbývat projít pouze ostatní možnosti, což zase může umožnit něco dedukovat atd.
 
+
+Teorie k počtu křížovek a zadání
+---------------------------------------
+Pro křížovku s pevně zvolenými rozměry n krát m je zajímavé uvažovat faktorprostor všech řešení (tj. černo-bílých obrázků) podle ekvivalence E(obr1,obr2) = "Obrázky, obr1 a obr2 jsou řešením stejného zadání". Je jasné, že obrázků je 2^(n* m) (když nepožadujeme neprázdnost žádků a sloupců, kdybychom to požadovali, dá se počet spočítat pomocí principu inkluze a exkluze). Netriviální ovšem je, kolik existuje různých zadání, které mají řešení. Tahle otázka dává smysl právě díky tomu, že některé křížovky mají více řešení. Některé křížovky mají dokonce hodně řešení. Když například uvažujeme čtvercovou křížovku, která má v zadání v každém sloupci a řádku právě jednu jedničku, je vidět, že taková křížovka má n! řešení. Ještě hůře jsou na tom křížovky, které mají v každém řádku a sloupci právě k jedniček (maximalizujeme přes k). Tohle jsou i nejhorší případy na počet možností na řádek. Kombinatorickými úvahami (tenisáková metoda) se spočte, že v takovém případě existuje Binomial[k + n - 1, k] možností obarvení řádku (řádek dlouhý n).
+
 Vytvoření obrázků
 ---------------------------------------
 * Jestli půjde
