@@ -191,7 +191,7 @@ bool reseni_pomoci_dedukce(string meno_vstupu_bok, string meno_vstupu_vrch, stri
     nageneruj_vsechny_moznosti_radku(slozka_moznosti_sloupce, pripona_moznosti_sloupce);
     prepis_radka_na_0_1(slozka_moznosti_sloupce, pripona_moznosti_sloupce, slozka_prepis_sloupce, pripona_prepis_sloupce);
 
-    for (int iterace = 1; iterace <= 18;  iterace++){
+    for (int iterace = 1; iterace <= 10;  iterace++){
 
         //nacitani_zadani_krizovky(meno_vstupu_bok, meno_vstupu_vrch);
         dedukce_radky(pripona_prepis_radky, slozka_prepis_radky);
@@ -208,5 +208,6 @@ bool reseni_pomoci_dedukce(string meno_vstupu_bok, string meno_vstupu_vrch, stri
         //obrazek_dedukce(2*i,inttostr(2*i)+'_obr.bmp');
 	}
 
+    //reflexe_reseni();
 	return false;
 }

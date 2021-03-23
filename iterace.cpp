@@ -32,8 +32,11 @@ void iterace_na_sloupce(){
 
 			if (radek == 0){
 				radek = kde_se_nachazi_posledni_nalezena_ktice;
-				// jestlize sme zacatek dalsi k-tice nenasli, vratime se na podledni
+				// jestlize sme zacatek dalsi k-tice nenasli, vratime se na posledni
 				// volne policko a zacneme tam zapisovat novou k-tici
+
+				// TODO: Tohle přepsat tak, abychom zbývající k-tice dopisovali od začátku řádku a nemuseli tak
+				// TODO: pak používat rekurentní metodu posun, která bude hodně časově i paměťově náročná.
 			}
 
 			for (pocet_policek_ktice = 1; pocet_policek_ktice <= Zadani_vrch.pixels[sloupec][ktice_v_zadani]; pocet_policek_ktice++){

@@ -32,10 +32,12 @@ void prepis_vysledku(string jmeno, string slozka, string pripona){
 				prepis_reseni << 'X';
 			}
 			else if ((znak == nevybarvene) || (znak == konec)){
-				prepis_reseni << ' ';
+				prepis_reseni << '.';
 			}
-			reseni >> znak;
+			if (pocitadlo_i < pocet_sloupcu_krizovky){
+				reseni >> znak;}
 		}
+		//reseni >> znak;
 		//readln(reseni);   // zakomentuj pro binarni soubory
 		prepis_reseni << '\n';
 	}
