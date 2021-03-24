@@ -28,7 +28,7 @@
         while(getline(soubor, radek)){
             cislo_radka++;
             //cout << radek.length() << '\n';
-            for (int pocitadlo_i = 2; pocitadlo_i <= radek.length() - 2; pocitadlo_i++){
+            for (int pocitadlo_i = 2; pocitadlo_i <= radek.length() - 1; pocitadlo_i++){
                 if (!spravny_znak(radek[pocitadlo_i])){
                     cout << "A " << jmeno << ", radek " << to_string(cislo_radka) << ", znak = \"" << radek[pocitadlo_i] << "\"" << '\n';
                     return true;
@@ -37,7 +37,7 @@
                     cout << "B " << jmeno << ", radek " << to_string(cislo_radka) << ", znak = \"" << radek[pocitadlo_i] << "\"" << '\n';
                     return true;
                 }
-                else if ((!je_cislo(radek[0])) || (!je_cislo(radek[radek.length() - 2]))){
+                else if ((!je_cislo(radek[0])) || (!je_cislo(radek[radek.length() - 1]))){
                     cout << "C " << jmeno << ", radek " << to_string(cislo_radka) << ", znak = \"" << radek[radek.length() - 2] << "\"" << '\n';
                     //cout << radek << '\n';
                     //cout << radek.length() << '\n';
