@@ -18,8 +18,8 @@ using namespace std;
 
 int main(void){
 
-    string jmeno_vstupu_bok = "a_bok.txt";
-    string jmeno_vstupu_vrch = "a_vrch.txt";
+    string jmeno_vstupu_bok = "bok.txt";
+    string jmeno_vstupu_vrch = "vrch.txt";
 
     reseni_pomoci_dedukce("Soubory/" + jmeno_vstupu_bok, "Soubory/" + jmeno_vstupu_vrch, s_m_r, p_m_r, s_p_r,
         p_p_r, s_m_s, p_m_s, s_p_s, p_p_s, "Dedukce/");
