@@ -1,5 +1,7 @@
 # Nonograms
 
+Implementace dvou způsobů řešení malovaných křížovek (nonograms). První metoda založena na brute force s ořezáváním, která funguje univerzálně. Druhá metoda implementuje klasické techniky řešení pomocí reprezentace křížovky v jazyce matematické logiky, nelze pomocí ní najít řešení obecné křížovky - je schopna vyřešit jen některé speciální případy. 
+
 Deklarační část
 --------------------------------------
 * Deklarace důležitých konstant
