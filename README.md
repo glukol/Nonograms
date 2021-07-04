@@ -2,6 +2,13 @@
 
 Implementace dvou způsobů řešení malovaných křížovek (nonograms). První metoda založena na brute force s ořezáváním, která funguje univerzálně. Druhá metoda implementuje klasické techniky řešení pomocí reprezentace křížovky v jazyce matematické logiky, nelze pomocí ní najít řešení obecné křížovky - je schopna vyřešit jen některé speciální případy. 
 
+<div align="center">
+  <img width="480" height="480" src="./Soubory/bruslarka.gif">
+  <p>
+    <em>Vizualizace řešení deduktivní metodou</em>
+  </p>
+</div>
+
 Deklarační část
 --------------------------------------
 * Deklarace důležitých konstant
@@ -37,12 +44,12 @@ Nejlepším způsobem řešení bude nějaká kombinace brute-force a deduktivn�
 
 Teorie k počtu křížovek a zadání
 ---------------------------------------
-Pro křížovku s pevně zvolenými rozměry n krát m je zajímavé uvažovat faktorprostor všech řešení (tj. černo-bílých obrázků) podle ekvivalence E(obr1,obr2) = "Obrázky, obr1 a obr2 jsou řešením stejného zadání". Je jasné, že obrázků je 2^(n* m) (když nepožadujeme neprázdnost žádků a sloupců, kdybychom to požadovali, dá se počet spočítat pomocí principu inkluze a exkluze). Netriviální ovšem je, kolik existuje různých zadání, které mají řešení. Tahle otázka dává smysl právě díky tomu, že některé křížovky mají více řešení. Některé křížovky mají dokonce hodně řešení. Když například uvažujeme čtvercovou křížovku, která má v zadání v každém sloupci a řádku právě jednu jedničku, je vidět, že taková křížovka má n! řešení. Ještě hůře jsou na tom křížovky, které mají v každém řádku a sloupci právě k jedniček (maximalizujeme přes k). Tohle jsou ty nejhorší případy na počet možností na řádek. Kombinatorickými úvahami (tenisáková metoda) se spočte, že v takovém případě existuje Binomial[k + n - 1, k] možností obarvení řádku (řádek dlouhý n).
+Pro křížovku s pevně zvolenými rozměry n krát m je zajímavé uvažovat faktorprostor všech řešení (tj. černo-bílých obrázků) podle ekvivalence `E(obr1,obr2) = "Obrázky, obr1 a obr2 jsou řešením stejného zadání"`. Je jasné, že obrázků je 2^(n* m) (když nepožadujeme neprázdnost žádků a sloupců, kdybychom to požadovali, dá se počet spočítat pomocí principu inkluze a exkluze). Netriviální ovšem je, kolik existuje různých zadání, které mají řešení. Tahle otázka dává smysl právě díky tomu, že některé křížovky mají více řešení. Některé křížovky mají dokonce hodně řešení. Když například uvažujeme čtvercovou křížovku, která má v zadání v každém sloupci a řádku právě jednu jedničku, je vidět, že taková křížovka má n! řešení. Ještě hůře jsou na tom křížovky, které mají v každém řádku a sloupci právě k jedniček (maximalizujeme přes k). Tohle jsou ty nejhorší případy na počet možností na řádek. Kombinatorickými úvahami (tenisáková metoda) se spočte, že v takovém případě existuje `Binomial[k + n - 1, k]` možností obarvení řádku (řádek dlouhý n).
 
 Když chceme zezdola odhadnout počet zadání, které mají řešení, triviální úvahou je vzít počet polovin zadání (zrčíme zadají jen pro řádky). Protože když něco předepíšeme jen v jednom směru, rozhodně bude existovat obarvení, které to bude splňovat. Tudíž dolním odhadem je například (počet zadání řádku)^n, kde počet zadání řádku se dá spočíst takto: fixujeme počet obarvených políček na řádku a fixujeme počet souvislých částí, mezi které je rozdělíme, pak aplikujeme tenisákovou metodu. Tohle přesčítáme přes počet obarvených políček a počet souvislých obarvených oblastí.
 
 Vzorec pro dolní odhad počtu zadání (na řádek)
-P[n_] := Sum[Sum[Binomial[k + i - 1, k], {k, 0, n - 2* i + 1}], {i, 1, Ceiling[n/2]}]
+`P[n_] := Sum[Sum[Binomial[k + i - 1, k], {k, 0, n - 2* i + 1}], {i, 1, Ceiling[n/2]}]`
 a hodnoty pro n od 1 do 50
 {1, 2, 4, 7, 12, 20, 33, 54, 88, 143, 232, 376, 609, 986, 1596, 2583, 4180, 6764, 10945, 17710, 28656, 46367, 75024, 121392, 196417,  317810, 514228, 832039, 1346268, 2178308, 3524577, 5702886, 9227464, 14930351, 24157816, 39088168, 63245985, 102334154, 165580140,  267914295, 433494436, 701408732, 1134903169, 1836311902, 2971215072, 4807526975, 7778742048, 12586269024, 20365011073, 32951280098}
 
@@ -53,4 +60,4 @@ Vidíme tedy, že faktorizaci prostoru rozhodně nejsme schopni provést pro kř
 
 Vytvoření obrázků
 ---------------------------------------
-* Jestli půjde
+* Doplnit generování obrázků
